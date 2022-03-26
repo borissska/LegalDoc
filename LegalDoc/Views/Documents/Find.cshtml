@@ -1,0 +1,58 @@
+﻿@model LegalDoc.Models.SendingObj
+
+@{
+    ViewData["Title"] = "Find";
+}
+
+<div class="row bottom-margin">
+        <form asp-action="Find" asp-controller="Documents">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group parallel-find">
+                <input asp-for="Stroka" class="form-control" />
+                <span asp-validation-for="Stroka" class="text-danger"></span>
+            </div>
+            <div class="form-group parallel-button">
+                <input type="submit" value="Поиск" class="btn btn-primary" />
+            </div>
+        </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 200px;">
+                Название
+            </th>
+            <th>
+                Текст
+            </th>
+            <th style="width: 200px;">
+                Дата принятия
+            </th>
+            <th>
+                Автор
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Document) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td style="display:block; height:60px; overflow:hidden;">
+                @Html.DisplayFor(modelItem => item.DocText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcceptTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Посмотреть</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

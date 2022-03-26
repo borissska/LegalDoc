@@ -1,0 +1,20 @@
+﻿@model LegalDoc.Models.Document
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="row">
+    <h4 class="text-center">@Html.DisplayFor(model => model.Title)</h4>
+    <div>@Html.DisplayFor(model => model.DocText)</div>
+    <div class="text-right">Автор документа: @Html.DisplayFor(model => model.AcceptTime)</div>
+    <div class="text-right">Дата подписания документа: @Html.DisplayFor(model => model.Author)</div>
+</div>
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Изменить</a>
+    </form>
+</div>

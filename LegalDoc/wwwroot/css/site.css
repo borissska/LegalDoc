@@ -1,0 +1,68 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.header-search {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.li-right{
+    margin-left:auto;
+}
+
+.parallel-find {
+    float: left;
+    display: block;
+    width:90%;
+}
+
+.parallel-button {
+    float: left;
+    display: block;
+    width:10%;
+}
+
+.center-find {
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-margin {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width:60%;
+}
+
+.hidden-text {
+    overflow: hidden;
+    height: 63px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
